@@ -3,6 +3,7 @@
  */
 @import 'boilerplate';
 @import 'functions';
+@import 'colours';
 @import 'mixins/trajanpro';
 
 body {
@@ -10,15 +11,33 @@ body {
 	margin-top: 10px;
 }
 h1 {
-	
+	font-family: TrajanProRegular;
+	font-weight: normal;
+	font-size: 4.5em;
+	background: url('../images/question-mark.png') no-repeat top right;
+	width: 850px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding-top: 10px;
+	.centre;
 }
 h2 {
-	
+	font-family: TrajanProRegular;
+	font-weight: normal;
+	color: @blue;
+	width: 430px;
+	margin-top: 10px;
+	.centre;
 }
 a {
+	text-decoration: none;
+	
+	img {
+		border: none;
+	}
 	
 	&:hover {
-		
+		text-decoration: underline;	
 	}	
 }
 
@@ -29,9 +48,121 @@ a {
 	width: 960px;
 	height: 680px;
 	padding-top: 20px;
+	position: relative;
 	
 	.titleImg {
 		width: 875px;
 		.centre;
 	}
+	
+	.map {
+		.centre;
+		width: 850px;
+	}
+	
+	.mapArea {
+		width: 200px;
+		display: block;
+	}
+	
+	.mapLayers {
+		span {
+			.hidden;
+			position: absolute;
+			padding-bottom: 24px;
+			padding-left: 0px;
+			background: url('../images/country-triangle.png') no-repeat bottom left;
+			
+			a {
+				background: @grey url('../images/double-arrow-white.png') no-repeat right;
+				.border-radius(2px);
+				font-family: TrajanProRegular;
+				font-size: 0.9em;
+				padding-left: 6px;
+				padding-right: 24px;
+				padding-top: 4px;
+				padding-bottom: 4px;
+				color: @white;
+				
+				&:hover {
+					text-decoration: none;
+				}
+				
+				&:after {
+					background: url('../images/double-arrow-white.png') no-repeat right;
+					padding-right: 10px;
+				}
+			}
+			
+			&#map-usa {
+				left: 200px;
+				top: 300px;
+			}
+			&#map-togo {
+				left: 441px;
+				top: 385px;
+			}
+			&#map-nigeria {
+				left: 460px;
+				top: 380px;
+			}
+			&#map-drc {
+				left: 498px;
+				top: 410px;
+			}
+			&#map-nepal {
+				left: 637px;
+				top: 340px;
+			}
+		}
+		
+	}
+	
+	.mapText {
+		width: 210px;
+		height: 210px;
+		position: absolute;
+		z-index: 5;
+		left: 35px;
+		bottom: 50px;
+		font-family: TrajanProRegular;
+		line-height: 1.5em;
+		color: @grey;
+	}
+	
+	.bottomNav {
+		font-family: TrajanProRegular;
+		font-size: 1.2em;
+		color: @lightGrey;
+		width: 350px;
+		.overflow;
+		.fr;
+		margin-top: 20px;
+		margin-right: 50px;
+		
+		li {
+			.fl;
+			margin-right: 5px;
+			
+			&:after {
+				content: ' / ';
+			}
+			
+			&.last {
+				
+				&:after {
+					content: '';	
+				} 
+			}
+			
+			a {
+				color: @grey;
+				
+				&.selected {
+					color: @blue;
+				}
+			}
+		}
+	}
+	
 }
