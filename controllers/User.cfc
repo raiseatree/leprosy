@@ -53,28 +53,28 @@
 					<cflogin idletimeout="3600">
 						
 						<cfloginuser 
-							name="#user.firstname# #user.surname#" 
+							name="#user.email#" 
 							password="something" 
-							roles="#user.roles#" />
+							roles="admin" />
 						
 					</cflogin>
 					
 					<!--- Re-direct the user --->
-					<cfset redirectTo(route="home")>
+					<cfset redirectTo(controller="admin", action="home")>
 					
 				<cfelse>
 					<!--- Flash and re-render --->
 					<cfset flashInsert(error="Sorry your password was incorrect, please try again")>
 					<cfset data.user = model("user").new()>
 					<cfset data.user.email = params.user.email>
-					<cfset renderWith(controller="main", action="signin", data="data")>
+					<cfset renderWith(controller="admin", action="index", data="data")>
 				</cfif>
 				
 			<cfelse>
 				<!--- Flash and re-render --->
 				<cfset flashInsert(error="Sorry your email address and password were not found, please try again")>
 				<cfset data.user = model("user").new()>
-				<cfset renderWith(controller="main", action="signin", data="data")>
+				<cfset renderWith(controller="admin", action="index", data="data")>
 			</cfif>
 			
 		<cfelse>

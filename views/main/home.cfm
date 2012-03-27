@@ -22,12 +22,5 @@
 	
 	<div class="mapText">Leprosy. Most of you have heard of it. But few really know about it. <span class="blue">Click on a country</span> as Tom documents those affected and involved around the world.</div>
 	
-	<nav class="bottomNav">
-		<ul class="menuList">
-			<li>#linkTo(controller="main", text="Home", class="selected")#</li>
-			<li>#linkTo(controller="about", text="About")#</li>
-			<li>#linkTo(controller="book", text="Book")#</li>
-			<li class="last">#linkTo(controller="contact", text="Contact")#</li>
-		</ul>
-	</nav>
+	#includePartial('/bottomNav')#
 </cfoutput>

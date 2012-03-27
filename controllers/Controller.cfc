@@ -1,7 +1,13 @@
-<!---
-	This is the parent controller file that all your controllers should extend.
-	You can add functions to this file to make them globally available in all your controllers.
-	Do not delete this file.
---->
 <cfcomponent extends="Wheels">
+
+	<cffunction name="authenticateUser">
+	
+		<!--- Check if the user is logged in or not --->
+		<cfif Not(IsUserLoggedIn())>
+			<!--- Forward to the login page --->
+			<cfset redirectTo(controller="admin", action="index")>
+		</cfif>
+	
+	</cffunction>
+
 </cfcomponent>
