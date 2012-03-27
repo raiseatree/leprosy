@@ -24,7 +24,8 @@
 			        function createUploader(){            
 			            var uploader = new qq.FileUploader({
 			                element: document.getElementById('file-uploader-demo1'),
-			                action: '/miscellaneous/photo-uploader.cfc',
+			                action: '/leprosy/miscellaneous/photo-uploader.cfc',
+			                allowedExtensions: ['jpg', 'jpeg'],
 							params: {method: 'Upload'}
 			            });           
 			        }
@@ -36,7 +37,7 @@
 				
 				<p>
 					#hiddenFieldTag(name="ID", value=data.gallery.ID)#
-					#submitTag(name="btnSubmit", value="Upload Photos")#
+					#submitTag(name="btnSubmit", value="Process Photos")#
 				</p>
 			
 			#endFormTag()#

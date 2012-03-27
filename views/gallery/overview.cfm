@@ -1,5 +1,7 @@
 <cfparam name="data">
 <cfoutput>
+	
+	#javascriptIncludeTag("jquery.jeditable.min")#
 
 	<h2>#data.gallery.galleryName#</h2>
 	
@@ -8,28 +10,21 @@
 	
 		<article id="content">
 			
-			<cfif data.gallery.RecordCount GT 0>
-				<!---><table>
-					<tr>
-						<th>##</th>
-						<th>Gallery Name</th>
-						<th>Edit</th>
-						<th>Delete</th>
-					</tr>
-					<cfloop query="data.galleries">
-						<tr>
-							<td>#CurrentRow#</td>
-							<td>#linkTo(controller="gallery", action="overview", text=galleryName, params="ID=#ID#")#</td>
-							<td>#linkTo(controller="gallery", action="edit", text=imageTag("edit.png"), params="ID=#ID#")#</td>
-							<td>#linkTo(controller="gallery", action="delete", text=imageTag("delete.png"), params="ID=#ID#")#</td>
-						</tr>
+			<p>#linkTo(controller="gallery", action="upload", params="ID=#data.gallery.ID#", text="Add Photos")#</p><hr>
+			
+			<cfif data.photos.RecordCount GT 0>
+				<ul class="adminPhotoList">
+					<cfloop query="data.photos">
+						<li><img src="miscellaneous/#data.photos.galleryID#/#data.photos.filename#" width="100"/><br /><span id="#data.photos.ID#" class="edit"><cfif data.photos.caption GT ''>#data.photos.caption#<cfelse>[Edit Caption]</cfif></span></li>
 					</cfloop>
-				</table>--->
+				</ul>
+				
+				<div class="cb"></div>
+				
+				#paginationLinks(prepend="<div class='pagination'>Page: ", append="</div>", classForCurrent="selected", route="adminGallery", ID=data.photos.galleryID)#
 			<cfelse>
 				<p>Sorry - no photos found in this gallery</p>
 			</cfif>
-			
-			<p>#linkTo(controller="gallery", action="upload", params="ID=#data.gallery.ID#", text="Add Photos")#</p><hr>
 			
 		</article>
 	</section>	

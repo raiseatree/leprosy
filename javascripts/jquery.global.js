@@ -12,9 +12,17 @@ $(document).ready(function() {
 		$(country).fadeIn('fast');
 	},function() {});
 	
-	// Show any notifications
+	/*
+	 *  Show any notifications
+	 */
 	showNotifications();
 	
+	/*
+	 * Make the captions editable (in admin)
+	 */
+	//$('.edit').editable('/photo/update');
+	$('.edit').editable('index.cfm?controller=photo&action=update');
+
 });
 
 /*

@@ -49,8 +49,12 @@
 
 	<cffunction name="overview">
 	
+		<!--- Set the defauly page for paginated data --->
+		<cfparam name="params.page" default="1">
+
 		<!--- Load this gallery --->
-		<cfset data.gallery = model("gallery").findAllByID(ID=params.ID, include="photo")>
+		<cfset data.gallery = model("gallery").findOneByID(ID=params.ID, returnAs="query")>
+		<cfset data.photos = model("photo").findAll(where="galleryID=#params.ID#", page=params.page, perPage=8, include="gallery")>
 	
 	</cffunction>
 
@@ -62,20 +66,32 @@
 		<!--- Check this gallery's folder for images --->
 		<cfset dir = ExpandPath('miscellaneous/#params.ID#')>
 		
-		<!--- Define a list of acceptable file types --->
-		<cfset fileTypes = '*.JPG,*.PNG'>
-		
 		<!--- Check Directory Exists --->
 		<cfif DirectoryExists(dir)>
 		
 			<!--- See if we have any files to process --->
 			<cfdirectory action="list" directory="#dir#" recurse="false" filter="*.JPG|*.jpg" name="galleryPhotos">
 					
-			<cfdump var="#galleryPhotos#"><cfabort>
-	
+			<!--- Loop through each of the photos and add to the DB --->
+			<cfloop query="galleryPhotos">
+			
+				<!--- Add the photo --->
+				<cfset addPhoto = model("photo").create(galleryID=params.ID, filename=galleryPhotos.name)>
+			
+				<cfif addPhoto.hasErrors()>
+					<cfset flashInsert(error="An error occurred whilst processing photo (filename - #galleryPhotos.name#)")>
+					<cfset redirectTo(action="upload", params="ID=#params.ID#")>
+				</cfif>
+				
+			</cfloop>
+			
+			<!--- Flash and return --->
+			<cfset flashInsert(success="Processed #galleryPhotos.RecordCount# photos successfully")>
+			<cfset redirectTo(action="overview", params="ID=#params.ID#")>
+			
 		<cfelse>
 			<cfset flashInsert(error="No photos found, please try re-uploading.")>
-			<cfset redirectTo(action="upload")>
+			<cfset redirectTo(action="upload", params="ID=#params.ID#")>
 		</cfif>
 	
 	</cffunction>
