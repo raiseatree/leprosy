@@ -22,7 +22,7 @@
 							<td>#CurrentRow#</td>
 							<td>#linkTo(controller="gallery", action="overview", text=galleryName, params="ID=#ID#")#</td>
 							<td>#linkTo(controller="gallery", action="edit", text=imageTag("edit.png"), params="ID=#ID#")#</td>
-							<td>#linkTo(controller="gallery", action="delete", text=imageTag("delete.png"), params="ID=#ID#")#</td>
+							<td>#linkTo(controller="gallery", action="delete", text=imageTag("delete.png"), params="ID=#ID#", class="dave")#</td>
 						</tr>
 					</cfloop>
 				</table>

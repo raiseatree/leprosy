@@ -6,11 +6,11 @@
 	
 	<!---><cffunction name="create">
 	
-		<cfset user.email = "andy@raiseatree.co.uk">
+		<cfset user.email = "info@tom-bradley.com">
 		
 		<!--- First create a salt and hash the password --->
 		<cfset theSalt = CreateUUID()>
-		<cfset user.password = Hash("agam3mn0N" & theSalt, 'SHA-512')>
+		<cfset user.password = Hash("Passw0rd" & theSalt, 'SHA-512')>
 		
 		<!--- Next encrypt the salt --->
 		<cfset user.passwordsalt = encrypt(theSalt,getEncryptKey(),'CFMX_COMPAT','hex')>

@@ -29,6 +29,35 @@
 	
 	</cffunction>
 	
+	<cffunction name="delete">
+	
+		<!--- Find the country and update --->
+		<cfset gallery = model("gallery").findOneByID(params.id)>	
+		<cfset deleteResult = gallery.delete()>
+	
+		<!--- Check the result --->
+		<cfif deleteResult EQ false>
+			<cfset data.gallery = gallery>
+			<cfset flashInsert(error="Sorry - an error occurred - see below for details")>
+			<cfset renderPage(template="overview")>
+		<cfelse>
+		
+			<!--- Now delete the folder of all photos --->
+			<cftry>
+				<cfset dir = ExpandPath('miscellaneous/#gallery.id#')>
+				<cfdirectory action="delete" directory="#dir#" recurse="true">
+				<cfset flashInsert(success="Gallery Deleted Successfully")>
+				
+				<cfcatch type="any">
+					<cfset flashInsert(error="Could no delete photos from the server but gallery has been deleted")>
+				</cfcatch>
+			</cftry>
+			
+			<cfset redirectTo(controller="country", action="overview", params="ID=#gallery.countryID#")>
+		</cfif>
+		
+	</cffunction>
+	
 	<cffunction name="edit">
 	
 		<cfif IsDefined("params.ID")>
@@ -111,7 +140,7 @@
 				<cfset renderPage(template="edit")>
 			<cfelse>
 				<cfset flashInsert(success="Gallery Updated Successfully")>
-				<cfset redirectTo(action="manage")>
+				<cfset redirectTo(controller="country", action="overview", params="ID=#gallery.countryID#")>
 			</cfif>
 			
 		</cfif>

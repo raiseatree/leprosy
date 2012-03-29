@@ -20,8 +20,18 @@ $(document).ready(function() {
 	/*
 	 * Make the captions editable (in admin)
 	 */
-	//$('.edit').editable('/photo/update');
-	$('.edit').editable('index.cfm?controller=photo&action=update');
+	$('.edit').editable('/photo/update');
+	//$('.edit').editable('index.cfm?controller=photo&action=update');
+
+	/*
+	 * Add a generic delete class to prompt the user in case they didn't want to click something
+	 */
+	$(".dave").click(function() {
+		var answer = confirm("Are you sure you wish to delete that?");
+		
+		if (answer) return true
+		else return false
+	});
 
 });
 

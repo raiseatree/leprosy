@@ -15,7 +15,7 @@
 			<cfif data.photos.RecordCount GT 0>
 				<ul class="adminPhotoList">
 					<cfloop query="data.photos">
-						<li><img src="miscellaneous/#data.photos.galleryID#/#data.photos.filename#" width="100"/><br /><span id="#data.photos.ID#" class="edit"><cfif data.photos.caption GT ''>#data.photos.caption#<cfelse>[Edit Caption]</cfif></span></li>
+						<li><img src="#GetServerRoot()#/miscellaneous/#data.photos.galleryID#/#data.photos.filename#" width="100"/><br /><span id="#data.photos.ID#" class="edit"><cfif data.photos.caption GT ''>#data.photos.caption#<cfelse>[Edit Caption]</cfif></span></li>
 					</cfloop>
 				</ul>
 				
