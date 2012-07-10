@@ -104,14 +104,21 @@
 			<!--- Loop through each of the photos and add to the DB --->
 			<cfloop query="galleryPhotos">
 			
-				<!--- Add the photo --->
-				<cfset addPhoto = model("photo").create(galleryID=params.ID, filename=galleryPhotos.name)>
-			
-				<cfif addPhoto.hasErrors()>
-					<cfset flashInsert(error="An error occurred whilst processing photo (filename - #galleryPhotos.name#)")>
-					<cfset redirectTo(action="upload", params="ID=#params.ID#")>
-				</cfif>
+				<!--- Check if we have this photo in the gallery already --->
+				<cfset checkPhoto = model("photo").findOne(where="galleryID=#params.ID# AND filename='#galleryPhotos.name#'")>
 				
+				<!--- Only add the photo if it doesn't already exist --->
+				<cfif Not(IsObject(checkPhoto))>
+				
+					<!--- Add the photo --->
+					<cfset addPhoto = model("photo").create(galleryID=params.ID, filename=galleryPhotos.name)>
+				
+					<cfif addPhoto.hasErrors()>
+						<cfset flashInsert(error="An error occurred whilst processing photo (filename - #galleryPhotos.name#)")>
+						<cfset redirectTo(action="upload", params="ID=#params.ID#")>
+					</cfif>
+					
+				</cfif>
 			</cfloop>
 			
 			<!--- Flash and return --->

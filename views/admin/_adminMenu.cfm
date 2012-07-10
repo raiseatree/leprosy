@@ -9,6 +9,15 @@
 		</div>
 		
 		<div class="navBlock">
+			<h3>Page Options</h3>
+			<ul>
+				<li>#linkTo(controller="about", action="edit", text="Edit About Page")#</li>
+				<li>#linkTo(controller="book", action="edit", text="Edit Book Page")#</li>
+				<li>#linkTo(controller="contact", action="edit", text="Edit Contact Page")#</li>
+			</ul>
+		</div>
+		
+		<div class="navBlock">
 			<h3>Admin Options</h3>
 			<ul>
 				<li>#linkTo(controller="user", action="logout", text="Logout")#</li>

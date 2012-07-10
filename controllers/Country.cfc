@@ -91,4 +91,81 @@
 	
 	</cffunction>
 
+	<cffunction name="view">
+	
+		<cfparam name="params.content" default="photo">
+		
+		<!--- Save all the params for use again (in switching between photo/video and experience galleries) --->
+		<cfset data.params = params>
+	
+		<!--- Takes a countryID and Content (photo | video | experience) as a param --->
+		<cfset data.country = model("country").findOneByID(ID=params.ID, returnAs="query")>
+		
+		<!--- Work out which content type we want --->
+		<cfswitch expression="#params.content#">
+			
+			<cfcase value="photo">
+				<!--- Load all the galleries --->
+				<cfset data.galleries = model("gallery").findAllByCountryID(CountryID=params.ID, select="ID AS contentID,countryID,galleryName AS contentName", order="ID DESC")>
+				
+				<!--- Check we found at least one and load the photos within it if so --->
+				<cfif data.galleries.RecordCount GT 0>
+					
+					<!--- Check if we want to load a specific gallery, otherwise load the first one --->
+					<cfif IsDefined("params.contentID")>
+						<!--- Load all the photos in this gallery --->
+						<cfset data.content = model("photo").findAll(select="filename,caption,galleryName AS contentName,galleryID AS contentID,description", where="galleryID=#params.contentID#", include="gallery")>
+					<cfelse>
+						<!--- Load all the photos in this gallery --->
+						<cfset data.content = model("photo").findAll(select="filename,caption,galleryName AS contentName,galleryID AS contentID,description", where="galleryID=#data.galleries.contentID[1]#", include="gallery")>
+					</cfif>
+				</cfif>
+			</cfcase>
+			
+			<cfcase value="video">
+				<cfset data.galleries = model("video").findAllByCountryID(CountryID=params.ID, select="ID AS contentID,countryID,videoName AS contentName", order="ID DESC")>				
+			
+				<!--- Check we found at least one and load the photos within it if so --->
+				<cfif data.galleries.RecordCount GT 0>
+				
+					<!--- Check if we want to load a specific gallery, otherwise load the first one --->
+					<cfif IsDefined("params.contentID")>
+						<!--- Load all the photos in this gallery --->
+						<cfset data.content = model("video").findAll(select="videoName AS contentName,ID AS contentID,url,description", where="ID=#params.contentID#")>
+					<cfelse>
+						<!--- Load all the photos in this gallery --->
+						<cfset data.content = model("video").findAll(select="videoName AS contentName,ID AS contentID,url,description", where="ID=#data.galleries.contentID[1]#")>
+					</cfif>
+				
+				</cfif>
+			</cfcase>
+			
+			<cfcase value="experience">
+				<cfset data.galleries = model("experience").findAllByCountryID(CountryID=params.ID, select="ID AS contentID,countryID,experienceName AS contentName", order="experienceName")>			
+			
+				<!--- Check we found at least one and load the photos within it if so --->
+				<cfif data.galleries.RecordCount GT 0>
+					
+					<!--- Check if we want to load a specific gallery, otherwise load the first one --->
+					<cfif IsDefined("params.contentID")>
+						<!--- Load all the photos in this gallery --->
+						<cfset data.content = model("experience").findAll(select="experienceName AS contentName,ID AS contentID,content,description", where="ID=#params.contentID#")>
+					<cfelse>
+						<!--- Load all the photos in this gallery --->
+						<cfset data.content = model("experience").findAll(select="experienceName AS contentName,ID AS contentID,content,description", where="ID=#data.galleries.contentID[1]#")>
+					</cfif>
+				</cfif>
+			</cfcase>
+
+		</cfswitch>
+		
+		<!--- Make sure we found at least one gallery --->
+		<cfif data.galleries.RecordCount EQ 0>
+			<!--- Flash and redirect --->
+			<cfset flashInsert(error="Sorry - this gallery has not currently been completed just yet, please check back soon")>
+			<cfset redirectTo(back="true")>
+		</cfif>
+	
+	</cffunction>
+
 </cfcomponent>

@@ -20,6 +20,12 @@ h1 {
 	margin-bottom: 0px;
 	padding-top: 10px;
 	.centre;
+	
+	&.noQuestion {
+		background: none;
+		border-bottom: dashed 1px 000;
+		padding-bottom: 20px;
+	}
 }
 h2 {
 	font-family: TrajanProRegular;
@@ -34,6 +40,11 @@ h2 {
 		text-align: left;
 		display: inline;
 	}
+}
+h3 {
+	font-family: TrajanProRegular;
+	font-weight: normal;
+	color: @grey;
 }
 a {
 	color: @grey;
@@ -139,6 +150,7 @@ table {
 	.map {
 		.centre;
 		width: 850px;
+		margin-bottom: 40px;
 	}
 	
 	.mapArea {
@@ -218,7 +230,7 @@ table {
 		width: 350px;
 		.overflow;
 		.fr;
-		margin-top: 20px;
+		.cb;
 		margin-right: 50px;
 		
 		li {
@@ -326,7 +338,189 @@ table {
 		}
 	}
 	
+	#countryHeader {
+		width: 890px;
+		.centre;
+		.overflow;
+		
+		h2 {
+			.fl;
+			font-size: 20px;
+			width: auto;
+		}
+		
+		h3 {
+			.fl;
+			margin-top: 11px;
+			margin-left: 10px;
+		}
+		
+		ul {
+			.menuList;
+			margin-top: 10px;
+			margin-right: 10px;
+			.overflow;
+			width: 390px;
+			.fr;
+			
+			li {
+				.fl;
+				font-family: TrajanProRegular;
+				font-size: 20px;
+				margin-right: 10px;
+				
+				&.last {
+					margin-right: 0px;
+				}
+				
+				a {
+					color: @grey;
+					
+					&.selected {
+						color: @blue;
+					}
+					
+					&:hover {
+						color: @blue;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+	
+	#contentMain {
+		width: 560px;
+		.fl;
+		.cb;
+		overflow: hidden;
+		margin-left: 35px;
+	}
+	
+	#contentAside {
+		width: 290px;
+		margin-right: 50px;
+		.fr;
+		
+		.galleryList {
+			.menuList;
+			margin-left: 75px;
+			margin-top: 10px;
+			margin-bottom: 15px;
+
+			li {
+				list-style-image: url('../images/gallery-icon.png');
+				line-height: 25px;
+				
+				a {
+					font-family: TrajanProRegular;
+					
+					&:hover {
+						text-decoration: none;
+					}
+				}
+				
+				&.selected {
+					list-style-image: url('../images/gallery-icon-selected.png');
+					
+					a {
+						color: @blue;
+					}
+				}
+			}
+			
+			&:after {
+				border-bottom: solid 1px @lightGrey;
+			}
+		}
+		
+		.galleryDesc {
+			width: 290px;
+			height: 450px;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			padding-top: 10px;
+			border-top: solid 1px @lightGrey;
+			font-family: Geneva;
+			font-size: 12px;
+			color: @grey;
+			line-height: 20px;
+		}
+	}
+	
+	.subHeadings {
+		.cb;
+		.menuList;
+		width: 850px;
+		.centre;
+		margin-left: 50px;
+		
+		li {
+			.fl;
+			clear: none;
+			margin-right: 30px;
+			font-family: TrajanProRegular;
+			font-size: 18px;
+			
+			&.last {
+				margin-right: 0px;
+			}
+		}
+	}
+	
+	.staticPane {
+		.cb;
+		.fl;
+		width: 850px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		margin-left: 50px;
+		height: 440px;
+		overflow-y: scroll;
+		overflow-x: none;
+		font-family: Geneva;
+		font-size: 12px;
+	}
+	
 }
+
+/*
+ * Galleria Styles for the image galleries 
+ */
+#main_image {
+	.centre;
+	.textCentre;
+	
+	img {
+		border: solid 5px #000;
+	}
+	
+	.caption {
+		width: 500px;
+		top: 22px;
+		position: relative;
+		.textCentre;
+		color: @darkGrey;
+		font-family: TrajanProRegular;
+		font-style: normal;
+	}
+}
+
+#photoNav {
+	img {
+		width: 30px;
+	}
+}
+
+/* Galleria Thumbnail Styles */
+.caption{text-align:center;font-style:italic;}
+.gallery_demo{width: 100%;padding:0;margin:0;}
+.gallery_demo li{display:block;width:49px;height:37px;border:1px solid #000;margin: 2px 2px;overflow:hidden;float:left;}
+.gallery_demo li div{position:absolute;display:none;top:0;left:240px}
+.gallery_demo li div img{cursor:pointer}
+.gallery_demo li div .caption{text-align: center;font-size: 0.9em;font-weight: normal;font-style: italic;margin-top: 1em;}
+.gallery_demo li img.thumb{cursor:pointer;top:auto;left:auto;display:block;width:auto;height:auto}
+* html .galleria li div span{width:400px} /* MSIE bug */
 
 /*
  * Defines the flash message style 

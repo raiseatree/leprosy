@@ -38,6 +38,7 @@
 	#errorMessagesFor("data.experience")#
 	
 	<p>#textField(objectName="data.experience", property="experienceName", label="Experience Name", prepend="<br/>")#</p>
+	<p>#textArea(objectName="data.experience", property="description", label="Description", prepend="<br/>")#</p>
 	<p>#textArea(objectName="data.experience", property="content", label="Content", prepend="<br/>")#</p>
 
 	#hiddenField(objectName="data.experience", property="id")#

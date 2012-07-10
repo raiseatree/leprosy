@@ -13,11 +13,11 @@
 	</map>
 	
 	<div class="mapLayers">
-		<span id="map-usa"><a href="##">USA</a></span>
-		<span id="map-togo"><a href="##">Togo</a></span>
-		<span id="map-nigeria"><a href="##">Nigeria</a></span>
-		<span id="map-drc"><a href="##">Democratic Republic of Congo</a></span>
-		<span id="map-nepal"><a href="##">Nepal</a></span>
+		<span id="map-usa">#linkTo(route="viewCountry", NAME="usa", ID=#data.country.usa.ID#, CONTENT="photo", text="USA")#</span>
+		<span id="map-togo">#linkTo(route="viewCountry", NAME="togo", ID=#data.country.togo.ID#, CONTENT="photo", text="Togo")#</span>
+		<span id="map-nigeria">#linkTo(route="viewCountry", NAME="nigeria", ID=#data.country.nigeria.ID#, CONTENT="photo", text="Nigeria")#</span>
+		<span id="map-drc">#linkTo(route="viewCountry", NAME="democratic-republic-of-congo", ID=#data.country.drc.ID#, CONTENT="photo", text="Democratic Republic of Congo")#</span>
+		<span id="map-nepal">#linkTo(route="viewCountry", NAME="nepal", ID=#data.country.nepal.ID#, CONTENT="photo", text="Nepal")#</span>
 	</div>
 	
 	<div class="mapText">Leprosy. Most of you have heard of it. But few really know about it. <span class="blue">Click on a country</span> as Tom documents those affected and involved around the world.</div>

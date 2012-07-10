@@ -2,6 +2,16 @@
 <cfoutput>
 	
 	#javascriptIncludeTag("jquery.jeditable.min")#
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 * Make the captions editable (in admin)
+			 */
+			$('.edit').editable('/photo/update');
+			//$('.edit').editable('index.cfm?controller=photo&action=update');
+		});
+	</script>
 
 	<h2>#data.gallery.galleryName#</h2>
 	

@@ -4,7 +4,7 @@ $(document).ready(function() {
 	/*
 	 * Hover over countries on the map, show the relevant country name
 	 */
-	$('.mapArea').hoverIntent(function() {
+	$('.mapArea').hover(function() {
 		// Hide all other regions currently showing (bug)
 		$('.mapLayers span').fadeOut('fast');
 		
@@ -15,13 +15,7 @@ $(document).ready(function() {
 	/*
 	 *  Show any notifications
 	 */
-	showNotifications();
-	
-	/*
-	 * Make the captions editable (in admin)
-	 */
-	$('.edit').editable('/photo/update');
-	//$('.edit').editable('index.cfm?controller=photo&action=update');
+	//showNotifications();
 
 	/*
 	 * Add a generic delete class to prompt the user in case they didn't want to click something
