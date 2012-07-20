@@ -4,8 +4,6 @@
 	
 	<cffunction name="update">
 		
-		<cflog file="Leprosy" type="info" text="#serialize(params)#">
-		
 		<cfif IsPost()>
 			
 			<!--- Format the SensorID as it's sent from jQuery --->
