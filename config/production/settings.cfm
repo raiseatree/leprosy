@@ -1,5 +1,5 @@
-<!---
-	This file is used to configure specific settings for the "production" environment.
-	A variable set in this file will override the one in "config/settings.cfm".
-	Example: <cfset set(errorEmailAddress="someone@somewhere.com")>
---->
+<!--- Set a reload password --->
+<cfset set(reloadPassword="raiseatree")>
+
+<!--- Enable URL Obfuscation to stop nosy customers --->
+<cfset set(obfuscateURLs=true)>

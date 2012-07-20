@@ -4,7 +4,7 @@
 		
 	</cffunction>
 	
-	<!---><cffunction name="create">
+	<!---<cffunction name="create">
 	
 		<cfset user.email = "info@tom-bradley.com">
 		
