@@ -24,7 +24,7 @@
 			        function createUploader(){            
 			            var uploader = new qq.FileUploader({
 			                element: document.getElementById('file-uploader-demo1'),
-			                action: 'miscellaneous/photo-uploader.cfc',
+			                action: '/miscellaneous/photo-uploader.cfc',
 			                allowedExtensions: ['jpg', 'jpeg'],
 							params: {method: 'Upload'}
 			            });           
