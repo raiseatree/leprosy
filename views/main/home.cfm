@@ -1,6 +1,6 @@
 <cfoutput>
 	<h1>Leprosy eliminated</h1>
-	<h2>A photographic documentary</h2>
+	<h2>And Other Stories</h2>
 	#imageTag(source="world-map.png", id="map", class="map", usemap="##mapLinks")#
 	
 	<map id="mapHolder" name="mapLinks">
