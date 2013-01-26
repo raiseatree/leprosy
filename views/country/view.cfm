@@ -99,14 +99,13 @@
 				<ul class="gallery_demo">
 					<cfloop query="data.content">
 						<cfif CurrentRow EQ 1>
-							<cfdump var="#findNoCase(CGI.HTTP_HOST,'.com')#">
-							<cfif findNoCase(CGI.HTTP_HOST,'.co') EQ 0>
+							<cfif findNoCase(CGI.HTTP_HOST,'.local') GT 0>
 								<li class="active"><img src="/leprosy/miscellaneous/#contentID#/#filename#" title="<cfif caption GT ''>#caption#<cfelse>&nbsp;</cfif>"></li>
 							<cfelse>
 								<li class="active"><img src="/miscellaneous/#contentID#/#filename#" title="<cfif caption GT ''>#caption#<cfelse>&nbsp;</cfif>"></li>
 							</cfif>
 						<cfelse>
-							<cfif findNoCase(CGI.HTTP_HOST,'.co') EQ 0>
+							<cfif findNoCase(CGI.HTTP_HOST,'.local') GT 0>
 								<li><img src="/leprosy/miscellaneous/#contentID#/#filename#" title="<cfif caption GT ''>#caption#<cfelse>&nbsp;</cfif>"></li>
 							<cfelse>
 								<li><img src="/miscellaneous/#contentID#/#filename#" title="<cfif caption GT ''>#caption#<cfelse>&nbsp;</cfif>"></li>
