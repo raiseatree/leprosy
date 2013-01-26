@@ -99,9 +99,17 @@
 				<ul class="gallery_demo">
 					<cfloop query="data.content">
 						<cfif CurrentRow EQ 1>
-							<li class="active"><img src="/leprosy/miscellaneous/#contentID#/#filename#" title="<cfif caption GT ''>#caption#<cfelse>&nbsp;</cfif>"></li>
+							<cfif findNoCase(CGI.HTTP_HOST,'.co') EQ 0>
+								<li class="active"><img src="/leprosy/miscellaneous/#contentID#/#filename#" title="<cfif caption GT ''>#caption#<cfelse>&nbsp;</cfif>"></li>
+							<cfelse>
+								<li class="active"><img src="/miscellaneous/#contentID#/#filename#" title="<cfif caption GT ''>#caption#<cfelse>&nbsp;</cfif>"></li>
+							</cfif>
 						<cfelse>
-							<li><img src="/leprosy/miscellaneous/#contentID#/#filename#" title="<cfif caption GT ''>#caption#<cfelse>&nbsp;</cfif>"></li>
+							<cfif findNoCase(CGI.HTTP_HOST,'.co') EQ 0>
+								<li><img src="/leprosy/miscellaneous/#contentID#/#filename#" title="<cfif caption GT ''>#caption#<cfelse>&nbsp;</cfif>"></li>
+							<cfelse>
+								<li><img src="/miscellaneous/#contentID#/#filename#" title="<cfif caption GT ''>#caption#<cfelse>&nbsp;</cfif>"></li>
+							</cfif>
 						</cfif>
 					</cfloop>
 				</ul>
