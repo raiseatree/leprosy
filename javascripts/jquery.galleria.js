@@ -285,7 +285,8 @@ $$.onPageLoad = function(_src) {
 	var _wrapper = $('.galleria_wrapper');
 	
 	// get the thumb
-	var _thumb = $('.galleria img[@rel="'+_src+'"]');
+	//old var _thumb = $('.galleria img[@rel="'+_src+'"]');
+	var _thumb = $('.galleria img[rel="'+_src+'"]');
 	
 	if (_src) {
 		
@@ -355,11 +356,13 @@ $.extend({galleria : {
 		}
 	},
 	next : function() {
-		var _next = $($$.nextSelector($('.galleria img[@rel="'+$.galleria.current+'"]').parents('li'))).find('img').attr('rel');
+		//oldvar _next = $($$.nextSelector($('.galleria img[@rel="'+$.galleria.current+'"]').parents('li'))).find('img').attr('rel');
+		var _next = $($$.nextSelector($('.galleria img[rel="'+$.galleria.current+'"]').parents('li'))).find('img').attr('rel');
 		$.galleria.activate(_next);
 	},
 	prev : function() {
-		var _prev = $($$.previousSelector($('.galleria img[@rel="'+$.galleria.current+'"]').parents('li'))).find('img').attr('rel');
+		//oldvar _prev = $($$.previousSelector($('.galleria img[@rel="'+$.galleria.current+'"]').parents('li'))).find('img').attr('rel');
+		var _prev = $($$.previousSelector($('.galleria img[rel="'+$.galleria.current+'"]').parents('li'))).find('img').attr('rel');
 		$.galleria.activate(_prev);
 	}
 }
