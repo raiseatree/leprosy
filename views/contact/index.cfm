@@ -6,7 +6,7 @@
 		
 		#data.content.content#
 	
-		<h3 class="fl">Book Reservation</h3>
+		<h3 class="fl">Email Updates</h3>
 		
 		#startFormTag(controller="reservation", action="add", class="cb")#
 		
