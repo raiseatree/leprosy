@@ -2,7 +2,7 @@
 	
 	<h1 class="noQuestion">Contact us...</h1>
 	
-	<section class="staticPane">
+	<section class="staticPane xTall">
 		
 		#data.content.content#
 	
