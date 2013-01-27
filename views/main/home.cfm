@@ -5,8 +5,8 @@
 	
 	<!--- Use http://www.image-maps.com --->
 	<map id="mapHolder" name="mapLinks">
-		<area class="ivorycoast mapArea" shape="poly" coords="380,260,379,251,373,246,366,252,377,264," href="/country/ivory-coast/#data.country.ivorycoast.id#/photo" alt="ivorycoast" title="ivory coast"   />
-		<area class="liberia mapArea" shape="poly" coords="376,249,376,237,391,241,391,263,383,263,380,257," href="/country/liberia/#data.country.liberia.id#/photo" alt="liberia" title="liberia"   />
+		<area class="liberia mapArea" shape="poly" coords="380,260,379,251,373,246,366,252,377,264," href="/country/liberia/#data.country.liberia.id#/photo" alt="liberia" title="liberia"   />
+		<area class="ivorycoast mapArea" shape="poly" coords="376,249,376,237,391,241,391,263,383,263,380,257," href="/country/ivory-coast/#data.country.ivorycoast.id#/photo" alt="ivorycoast" title="ivory coast"   />
 		<area class="ghana mapArea" shape="poly" coords="390,242,390,263,399,259,398,239,394,241," href="/country/ghana/#data.country.ghana.id#/photo" alt="ghana" title="ghana" />
 		<area class="usa mapArea" shape="poly" coords="66,64,67,109,44,111,7,132,1,122,14,115,1,69,17,59,33,58," alt="usa" title="United States of America" href="/country/usa/#data.country.usa.id#/photo" />	
 		<area class="usa mapArea" shape="poly" coords="101,142,100,163,110,186,145,193,164,207,171,200,184,197,197,196,204,211,211,203,205,192,223,177,223,170,241,154,241,143,228,142,204,160,203,153,193,143,181,140,156,140,108,140," alt="usa" title="United States of America" href="/country/usa/#data.country.usa.id#/photo" />
