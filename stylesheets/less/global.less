@@ -245,9 +245,12 @@ table {
 		color: @lightGrey;
 		width: 350px;
 		.overflow;
-		.fr;
-		.cb;
+		/*.fr;
+		.cb;*/
 		margin-right: 50px;
+		position: absolute;
+		bottom: 40px;
+		right: 0px;
 		
 		li {
 			.fl;
@@ -524,6 +527,7 @@ table {
 }
 
 #photoNav {
+	
 	img {
 		width: 30px;
 	}
@@ -531,9 +535,9 @@ table {
 
 /* Galleria Thumbnail Styles */
 .caption{text-align:center;font-style:italic;}
-.gallery_demo{width: 100%;padding:0;margin:0;}
+.gallery_demo{width: 100%;padding:0;margin:0;overflow:auto;height: 88px;}
 .gallery_demo li{display:block;width:49px;height:37px;border:1px solid #000;margin: 2px 2px;overflow:hidden;float:left;}
-.gallery_demo li div{position:absolute;display:none;top:0;left:240px}
+.gallery_demo li div{position:absolute;display:none;top:0;left:240px;}
 .gallery_demo li div img{cursor:pointer}
 .gallery_demo li div .caption{text-align: center;font-size: 0.9em;font-weight: normal;font-style: italic;margin-top: 1em;}
 .gallery_demo li img.thumb{cursor:pointer;top:auto;left:auto;display:block;width:auto;height:auto}
