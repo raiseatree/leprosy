@@ -99,7 +99,7 @@
 		<cfif DirectoryExists(dir)>
 		
 			<!--- See if we have any files to process --->
-			<cfdirectory action="list" directory="#dir#" recurse="false" filter="*.JPG|*.jpg" name="galleryPhotos">
+			<cfdirectory action="list" directory="#dir#" recurse="false" filter="*.JPG|*.jpg" name="galleryPhotos" sort="name ASC">
 					
 			<!--- Loop through each of the photos and add to the DB --->
 			<cfloop query="galleryPhotos">
