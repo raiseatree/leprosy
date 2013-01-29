@@ -83,7 +83,7 @@
 
 		<!--- Load this gallery --->
 		<cfset data.gallery = model("gallery").findOneByID(ID=params.ID, returnAs="query")>
-		<cfset data.photos = model("photo").findAll(where="galleryID=#params.ID#", page=params.page, perPage=8, include="gallery")>
+		<cfset data.photos = model("photo").findAll(where="galleryID=#params.ID#", page=params.page, perPage=8, include="gallery", order="ID ASC")>
 	
 	</cffunction>
 

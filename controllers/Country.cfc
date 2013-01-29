@@ -114,10 +114,10 @@
 					<!--- Check if we want to load a specific gallery, otherwise load the first one --->
 					<cfif IsDefined("params.contentID")>
 						<!--- Load all the photos in this gallery --->
-						<cfset data.content = model("photo").findAll(select="filename,caption,galleryName AS contentName,galleryID AS contentID,description", where="galleryID=#params.contentID#", include="gallery")>
+						<cfset data.content = model("photo").findAll(select="filename,caption,galleryName AS contentName,galleryID AS contentID,description", where="galleryID=#params.contentID#", include="gallery", order="ID ASC")>
 					<cfelse>
 						<!--- Load all the photos in this gallery --->
-						<cfset data.content = model("photo").findAll(select="filename,caption,galleryName AS contentName,galleryID AS contentID,description", where="galleryID=#data.galleries.contentID[1]#", include="gallery")>
+						<cfset data.content = model("photo").findAll(select="filename,caption,galleryName AS contentName,galleryID AS contentID,description", where="galleryID=#data.galleries.contentID[1]#", include="gallery", order="ID ASC")>
 					</cfif>
 				</cfif>
 			</cfcase>
