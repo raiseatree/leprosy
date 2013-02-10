@@ -1,1 +1,1 @@
-#name# - #email# - just registered via isleprosyeliminated.com
+<cfoutput>#name# - #email# - just registered via isleprosyeliminated.com</cfoutput>

@@ -4,4 +4,4 @@
 <!--- Mail Settings --->
 <cfset set(
     functionName="sendEmail",
-    server="localhost")>
+    server="localhost", type="text")>
