@@ -16,7 +16,7 @@
 			<p>#textField(objectName="data.reservation", property="surname", label="Surname", prepend="<br/>")#</p>
 			<p>#textField(objectName="data.reservation", property="email", label="Email", prepend="<br/>")#</p>
 	
-			<p>#submitTag(name="btnSubmit", value="Place Reservation")#</p>
+			<p>#submitTag(name="btnSubmit", value="Sign up for updates")#</p>
 	
 		#endFormTag()#
 		
