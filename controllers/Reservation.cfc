@@ -14,6 +14,10 @@
 				<cfset flashInsert(error="Sorry - an error occurred - see below for details")>
 				<cfset renderPage(template="/contact/home")>
 			<cfelse>
+			
+				<!--- Mail Tom --->
+				<cfset sendEmail(to="andystephenson88@gmail.com", from="hello@isleprosyeliminated.com", template="signup")>
+			
 				<cfset flashInsert(success="Reservation Added Successfully")>
 				<cfset redirectTo(controller="contact", action="sent")>
 			</cfif>
