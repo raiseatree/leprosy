@@ -12,13 +12,15 @@
 	</head>
 	<body>
 		<section id="main">
-			<cfoutput>#includeContent()#</cfoutput>
+			#includeContent()#
 		</section>
 		
 		<!--- Display any flash messages --->
 		<div id="notification" class="notification <cfif flashKeyExists('success')>success<cfelseif flashKeyExists('error')>error</cfif>">
 			<span id="notification-text"><cfif flashKeyExists("success")>#flash("success")#<cfelseif flashKeyExists("error")>#flash("error")#</cfif></span>
 		</div>
+		
+		#googleAnalyticsTag()#
 	</body>
 </html>
 </cfoutput>
