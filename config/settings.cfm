@@ -4,7 +4,7 @@
 <!--- Mail Settings --->
 <cfset set(
     functionName="sendEmail",
-    server="localhost", type="text")>
+    server="localhost", username="leprosy", password="Raiseatree12", type="text")>
 	
 <!--- Google Analytics --->
 <cfset set(google.analytics.trackerId = "UA-38599801-1")>
