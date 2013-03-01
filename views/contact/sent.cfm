@@ -1,6 +1,6 @@
 <cfoutput>
 	
-	<h1 class="noQuestion">Reservation Sent...</h1>
+	<h1 class="noQuestion">Sent...</h1>
 	
 	<section class="staticPane xTall">
 		
