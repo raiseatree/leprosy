@@ -123,6 +123,8 @@
 			
 		<cfelseif IsDefined("data.content") AND data.params.content EQ 'experience'>
 		
+			<div class="experience">#data.content.content#</div>
+		
 		</cfif>
 	
 	</section>
@@ -138,8 +140,7 @@
 		<cfif IsDefined("data.content")><div class="galleryDesc">#data.content.description#</div></cfif>
 		
 	</aside>
-	
-	
-	
+
 	#includePartial('/bottomNav')#
+	
 </cfoutput>
