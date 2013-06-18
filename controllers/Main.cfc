@@ -6,7 +6,7 @@
 		
 		<!--- Load all the countries --->
 		<cfset data.country.usa = model("country").findOne(where="countryName='USA'", returnAs="query")>
-		<cfset data.country.drc = model("country").findOne(where="countryName='Democratic Republic of Congo'", returnAs="query")>
+		<cfset data.country.drc = model("country").findOne(where="countryName='DRCongo'", returnAs="query")>
 		<cfset data.country.togo = model("country").findOne(where="countryName='Togo'", returnAs="query")>
 		<cfset data.country.nepal = model("country").findOne(where="countryName='Nepal'", returnAs="query")>
 		<cfset data.country.nigeria = model("country").findOne(where="countryName='Nigeria'", returnAs="query")>

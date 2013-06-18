@@ -21,7 +21,7 @@
 		<span id="map-usa">#linkTo(route="viewCountry", NAME="united-states-of-america", ID=#data.country.usa.ID#, CONTENT="photo", text="USA")#</span>
 		<span id="map-togo">#linkTo(route="viewCountry", NAME="togo", ID=#data.country.togo.ID#, CONTENT="photo", text="Togo")#</span>
 		<span id="map-nigeria">#linkTo(route="viewCountry", NAME="nigeria", ID=#data.country.nigeria.ID#, CONTENT="photo", text="Nigeria")#</span>
-		<span id="map-drc">#linkTo(route="viewCountry", NAME="democratic-republic-of-congo", ID=#data.country.drc.ID#, CONTENT="photo", text="Democratic Republic of Congo")#</span>
+		<span id="map-drc">#linkTo(route="viewCountry", NAME="drcongo", ID=#data.country.drc.ID#, CONTENT="photo", text="Democratic Republic of Congo")#</span>
 		<span id="map-nepal">#linkTo(route="viewCountry", NAME="nepal", ID=#data.country.nepal.ID#, CONTENT="photo", text="Nepal")#</span>
 		<span id="map-ivorycoast">#linkTo(route="viewCountry", NAME="ivory-coast", ID=#data.country.ivorycoast.ID#, CONTENT="photo", text="Ivory Coast")#</span>
 		<span id="map-liberia">#linkTo(route="viewCountry", NAME="liberia", ID=#data.country.liberia.ID#, CONTENT="photo", text="Liberia")#</span>
