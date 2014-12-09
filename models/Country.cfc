@@ -6,7 +6,7 @@
 		
 		<!--- Error Messages --->
 		<cfset validatesPresenceOf(property="countryName", message="Country Name cannot be empty")>
-	</cffunction>
 	
+	</cffunction>
 	
 </cfcomponent>
