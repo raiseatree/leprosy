@@ -14,7 +14,7 @@
 		<area class="nigeria mapArea" shape="poly" coords="403,255,412,260,435,242,431,234,409,233,404,252," alt="nigeria" title="Nigeria" href="/country/nigeria/#data.country.nigeria.id#/photo" />
 		<area class="drc mapArea" shape="poly" coords="424,280,432,277,442,254,469,255,472,273,471,297,465,301,439,293,435,283," alt="drc" title="Democratic Republic of Congo" href="/country/democratic-republic-of-congo/#data.country.drc.id#/photo" />
 		<area class="nepal mapArea" shape="poly" coords="584,200,607,209,608,199,593,192,583,195," alt="nepal" title="Nepal" href="/country/nepal/#data.country.nepal.id#/photo" />
-		<area class="india mapArea" shape="poly" coords="583,254,611,217,631,200,618,191,608,204,600,205,584,202,586,190,586,172,569,182,557,209,581,256," href="/country/india/#data.country.india.id#/photo" alt="india" title="India" />
+		<area class="india mapArea" shape="poly" coords="584,253,610,220,606,205,588,200,589,193,583,178,571,183,561,202,558,213,563,230,570,246" href="/country/india/#data.country.india.id#/photo" alt="india" title="India" />
 		<area class="myanmar mapArea" shape="poly" coords="633,249,638,236,632,226,641,216,631,198,620,203,613,218,614,226" href="/country/myanmar/#data.country.myanmar.id#/photo" alt="myanmar" title="Myanmar" />
 		<area class="bangladesh mapArea" shape="poly" coords="611,220,618.0000366210937,205.0000015258789,593.0000366210937,188.0000015258789,583.0000366210937,198.0000015258789" href="/country/bangladesh/#data.country.bangladesh.id#/photo" alt="bangladesh" title="Bangladesh" />
 
