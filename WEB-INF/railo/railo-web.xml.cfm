@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><railo-configuration password="9c6145cf14954fcd703386b4c15c1232b67a65ea03e90403d5c459d398bc7792" version="2.0"><cfabort/>
+<?xml version="1.0" encoding="UTF-8"?><railo-configuration version="2.0">
 
 <!-- 
 Path placeholders:
@@ -31,7 +31,7 @@ Path placeholders:
 <!--	or ask your database distributor 																-->
 
 	<data-sources>
-	<data-source allow="511" blob="false" class="org.gjt.mm.mysql.Driver" clob="false" connectionTimeout="1" custom="characterEncoding=UTF-8&amp;useUnicode=true" database="leprosy" dsn="jdbc:mysql://{host}:{port}/{database}" host="localhost" metaCacheTimeout="60000" name="leprosy" password="encrypted:91dee008715aa43f893fcc043c47d26841aa71b286ac1ce88cf95d4e977dd153" port="3306" storage="false" username="root" validate="false"/></data-sources>
+	</data-sources>
 	
 	<resources>
     	<!--

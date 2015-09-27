@@ -576,14 +576,16 @@
 			}
 			application.wheels.cacheLastCulledAt = Now();
 		}
-		if ($cacheCount() < application.wheels.maximumItemsToCache)
-		{
-			application.wheels.cache[arguments.category][arguments.key] = {};
-			application.wheels.cache[arguments.category][arguments.key].expiresAt = DateAdd(application.wheels.cacheDatePart, arguments.time, Now());
-			if (IsSimpleValue(arguments.value))
-				application.wheels.cache[arguments.category][arguments.key].value = arguments.value;
-			else
-				application.wheels.cache[arguments.category][arguments.key].value = duplicate(arguments.value);
+		if ($cacheCount() < application.wheels.maximumItemsToCache) 
+		{ 
+			loc.cacheItem = {}; 
+			loc.cacheItem.expiresAt = DateAdd(application.wheels.cacheDatePart, 
+				arguments.time, Now()); 
+			if (IsSimpleValue(arguments.value)) 
+				loc.cacheItem.value = arguments.value; 
+			else 
+				loc.cacheItem.value = duplicate(arguments.value); 
+				application.wheels.cache[arguments.category][arguments.key] = loc.cacheItem;
 		}
 	</cfscript>
 </cffunction>

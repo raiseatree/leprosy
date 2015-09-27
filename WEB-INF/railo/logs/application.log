@@ -1,1 +1,3 @@
 "Severity","ThreadID","Date","Time","Application","Message"
+"ERROR","web-0","09/27/2015","23:22:28","","key [WHEELS] doesn't exist in struct (keys:applicationname)"
+"ERROR","web-0","09/27/2015","23:22:31","","You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OPTION SQL_SELECT_LIMIT=1' at line 1"
